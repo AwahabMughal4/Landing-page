@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Routes, Route } from "react-router-dom"; // Import Routes and Route
+import HeroSection from "./components/HeroSection";
+import Cards from "./components/Cards";
+import LogoClouds from "./components/LogoClouds";
+import Footer from "./layouts/Footer";
+import AndroidDevelopment from "./components/AndroidDevelopment";
+import WebDevelopment from "./components/WebDevelopment";
+import EmbeddedSystem from "./components/EmbeddedSystem";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {/* Ensure that all routes are wrapped in the Routes component */}
+      <Routes>
+        <Route path="/" element={<HeroSection />} />
+        <Route path="/AndroidDevelopment" element={<AndroidDevelopment />} />
+        <Route path="/WebDevelopment" element={<WebDevelopment />} />
+        <Route path="/EmbeddedSystem" element={<EmbeddedSystem />} />
+      </Routes>
+      {/* These components should render regardless of the route */}
+      <Cards />
+      <LogoClouds />
+      <Footer />
+    </>
   );
 }
 
